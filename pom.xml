@@ -204,6 +204,34 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
+
+            <plugin> <!-- maven-enforcer-plugin force specific maven versions-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-version</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>[3.6.0,)</version> <!-- Maven 3.6.0 or higher -->
+                                </requireMavenVersion>
+                                <requierJavaVersion>
+                                    <version>[11,)</version> <!-- Java 11 or higher -->
+                                </requierJavaVersion>
+                                <requierReleaseVersion>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                    <message>Release builds must not have on snapshot dependencies</message>
+                                </requierReleaseVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
         </plugins>
     </build>
 </project>
