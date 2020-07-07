@@ -141,6 +141,21 @@
             <optional>true</optional>
         </dependency>
 
+        <!--   MySql Connection Polling   -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>3.4.5</version>
+        </dependency>
+        <!--   MySql Connection Polling   -->
+
+        <!--        ActiveMQ-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-artemis</artifactId>
+        </dependency>
+        <!--        ActiveMQ-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
